@@ -1,6 +1,7 @@
 package callumhutchy.co.uk.runecraft.items;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFireball;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import callumhutchy.co.uk.runecraft.items.metal.Bar;
@@ -56,6 +57,10 @@ public class Items {
 	
 	//Tools
 	
+	
+	//Misc
+	public static Item airBlast;
+	
 	public static void init() {
 		//Runes
 		airRune = new AirRune();
@@ -67,6 +72,9 @@ public class Items {
 		//Weapons
 		skeletalAirStaff = new SkeletalAirStaff();
 		
+		
+		//Misc
+		airBlast = new AirBlast();
 	}
 
 	@SuppressWarnings("deprecation")
