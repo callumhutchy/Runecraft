@@ -4,8 +4,13 @@ import callumhutchy.co.uk.runecraft.Runecraft;
 import net.minecraft.item.Item;
 
 public class RuneItem extends Item {
+	private String unlocalizedName;
+
 	public RuneItem(){
 		this.setCreativeTab(Runecraft.tabRunecraftMagic);
 		this.setMaxStackSize(64);
 	}
+	
+	
+	
 }

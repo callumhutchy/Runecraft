@@ -1,5 +1,7 @@
 package callumhutchy.co.uk.runecraft.items.weapons.staves;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import callumhutchy.co.uk.runecraft.Runecraft;
 import callumhutchy.co.uk.runecraft.entity.EntityAirBlast;
 import callumhutchy.co.uk.runecraft.items.Items;
@@ -36,4 +38,9 @@ public class SkeletalAirStaff extends Item {
 	   return par1ItemStack;
 	   }
 	
+	@SideOnly(Side.CLIENT)
+    public boolean isFull3D()
+    {
+        return true;
+    }
 }
