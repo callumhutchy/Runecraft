@@ -34,6 +34,13 @@ public class Runecraft
 		}
     };
     
+    public static CreativeTabs tabRunecraftWeapons = new CreativeTabs("tabRunecraftWeapons"){
+		@Override
+		public Item getTabIconItem() {
+			return Items.runeDagger;
+		}
+    };
+    
     
     @SidedProxy(clientSide="callumhutchy.co.uk.runecraft.ClientProxy", serverSide="callumhutchy.co.uk.runecraft.CommonProxy")
     public static CommonProxy proxy;
@@ -58,7 +65,7 @@ public class Runecraft
     	
     	LanguageRegistry.instance().addStringLocalization("itemGroup.tabRunecraftMagic","en_US","Runecraft Magic");
     	LanguageRegistry.instance().addStringLocalization("itemGroup.tabRunecraftMetal","en_US","Runecraft Metal");
-
+    	LanguageRegistry.instance().addStringLocalization("itemGroup.tabRunecraftWeapons","en_US","Runecraft Weapons");
 
     	
     }

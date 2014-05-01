@@ -8,6 +8,7 @@ import callumhutchy.co.uk.runecraft.items.metal.Bar;
 import callumhutchy.co.uk.runecraft.items.metal.RuneBar;
 import callumhutchy.co.uk.runecraft.items.runes.AirRune;
 import callumhutchy.co.uk.runecraft.items.runes.RuneItem;
+import callumhutchy.co.uk.runecraft.items.weapons.rune.RuneDagger;
 import callumhutchy.co.uk.runecraft.items.weapons.staves.SkeletalAirStaff;
 
 public class Items {
@@ -51,14 +52,61 @@ public class Items {
 	
 	//Weapons
 	public static Item skeletalAirStaff;
+	public static Item runeDagger;
+	
 	
 	//Food
 	
 	
 	//Tools
+	public static Item fishingNet;
+	public static Item bigfishingNet;
+	public static Item flyFishingRod;
+	public static Item harpoon;
+	public static Item cage;
 	
 	
 	//Misc
+	
+	
+	//Fish
+	public static Item crayFish;//
+	public static Item shrimp;//
+	public static Item sardines;
+	public static Item herring;
+	public static Item achovies;//
+	public static Item mackerel;
+	public static Item trout;
+	public static Item pike;
+	public static Item salmon;
+	public static Item tuna;
+	public static Item lobsters;
+	public static Item swordFish;
+	public static Item monkFish;
+	public static Item shark;
+	public static Item caveFish;
+	public static Item rocktails;
+	
+	public static Item cooked_crayFish;//
+	public static Item cooked_shrimp;//
+	public static Item cooked_sardines;
+	public static Item cooked_herring;
+	public static Item cooked_achovies;//
+	public static Item cooked_mackerel;
+	public static Item cooked_trout;
+	public static Item cooked_pike;
+	public static Item cooked_salmon;
+	public static Item cooked_tuna;
+	public static Item cooked_lobsters;
+	public static Item cooked_swordFish;
+	public static Item cooked_monkFish;
+	public static Item cooked_shark;
+	public static Item cooked_caveFish;
+	public static Item cooked_rocktails;
+	
+	
+	
+	
 	public static Item airBlast;
 	
 	public static void init() {
@@ -71,6 +119,8 @@ public class Items {
 		
 		//Weapons
 		skeletalAirStaff = new SkeletalAirStaff();
+		runeDagger = new RuneDagger();
+		
 		
 		
 		//Misc
@@ -82,12 +132,15 @@ public class Items {
 		LanguageRegistry.addName(airRune, "Air Rune");
 		LanguageRegistry.addName(runeBar, "Rune Bar");
 		LanguageRegistry.addName(skeletalAirStaff, "Skeletal Air Staff");
+		LanguageRegistry.addName(runeDagger, "Rune Dagger");
 	}
 	
 	public static void addItemsToGame(){
 		GameRegistry.registerItem(airRune, airRune.getUnlocalizedName());
 		GameRegistry.registerItem(runeBar, runeBar.getUnlocalizedName());
 		GameRegistry.registerItem(skeletalAirStaff, skeletalAirStaff.getUnlocalizedName());
+		GameRegistry.registerItem(runeDagger, runeDagger.getUnlocalizedName());
+	
 	}
 	
 	public static void addCraftingRecipes(){
