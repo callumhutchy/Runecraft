@@ -7,6 +7,7 @@ import callumhutchy.co.uk.runecraft.items.BaseModItem;
 
 public class Weapon extends BaseModItem{
 
+
 	public Weapon() {
 		this.setCreativeTab(Runecraft.tabRunecraftWeapons);
 		this.setMaxStackSize(1);

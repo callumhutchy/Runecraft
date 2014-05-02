@@ -6,27 +6,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import callumhutchy.co.uk.runecraft.items.metal.Bar;
 import callumhutchy.co.uk.runecraft.items.metal.RuneBar;
-import callumhutchy.co.uk.runecraft.items.runes.ArmadylRune;
-import callumhutchy.co.uk.runecraft.items.runes.AstralRune;
-import callumhutchy.co.uk.runecraft.items.runes.BloodRune;
-import callumhutchy.co.uk.runecraft.items.runes.BodyRune;
-import callumhutchy.co.uk.runecraft.items.runes.ChaosRune;
-import callumhutchy.co.uk.runecraft.items.runes.CosmicRune;
-import callumhutchy.co.uk.runecraft.items.runes.DeathRune;
-import callumhutchy.co.uk.runecraft.items.runes.DustRune;
-import callumhutchy.co.uk.runecraft.items.runes.EarthRune;
-import callumhutchy.co.uk.runecraft.items.runes.FireRune;
-import callumhutchy.co.uk.runecraft.items.runes.LavaRune;
-import callumhutchy.co.uk.runecraft.items.runes.LawRune;
-import callumhutchy.co.uk.runecraft.items.runes.MindRune;
-import callumhutchy.co.uk.runecraft.items.runes.MistRune;
-import callumhutchy.co.uk.runecraft.items.runes.MudRune;
-import callumhutchy.co.uk.runecraft.items.runes.NatureRune;
-import callumhutchy.co.uk.runecraft.items.runes.RuneItem;
-import callumhutchy.co.uk.runecraft.items.runes.SmokeRune;
-import callumhutchy.co.uk.runecraft.items.runes.SoulRune;
-import callumhutchy.co.uk.runecraft.items.runes.SteamRune;
-import callumhutchy.co.uk.runecraft.items.runes.WaterRune;
+import callumhutchy.co.uk.runecraft.items.weapons.BattleAxe;
+import callumhutchy.co.uk.runecraft.items.weapons.Dagger;
 import callumhutchy.co.uk.runecraft.items.weapons.Weapon;
 import callumhutchy.co.uk.runecraft.items.weapons.rune.RuneBattleAxe;
 import callumhutchy.co.uk.runecraft.items.weapons.rune.RuneDagger;
@@ -36,26 +17,26 @@ public class Items {
 
 	//Runes
 	public static Item airrune;
-	public static RuneItem armadylrune;
-	public static RuneItem astralRune;
-	public static RuneItem bloodRune;
-	public static RuneItem bodyRune;
-	public static RuneItem chaosRune;
-	public static RuneItem cosmicRune;
-	public static RuneItem deathRune;
-	public static RuneItem dustRune;
-	public static RuneItem earthRune;
-	public static RuneItem fireRune;
-	public static RuneItem lavaRune;
-	public static RuneItem lawRune;
-	public static RuneItem mindRune;
-	public static RuneItem mistRune;
-	public static RuneItem mudRune;
-	public static RuneItem natureRune;
-	public static RuneItem smokeRune;
-	public static RuneItem soulRune;
-	public static RuneItem steamRune;
-	public static RuneItem waterRune;
+	public static Item armadylrune;
+	public static Item astralRune;
+	public static Item bloodRune;
+	public static Item bodyRune;
+	public static Item chaosRune;
+	public static Item cosmicRune;
+	public static Item deathRune;
+	public static Item dustRune;
+	public static Item earthRune;
+	public static Item fireRune;
+	public static Item lavaRune;
+	public static Item lawRune;
+	public static Item mindRune;
+	public static Item mistRune;
+	public static Item mudRune;
+	public static Item natureRune;
+	public static Item smokeRune;
+	public static Item soulRune;
+	public static Item steamRune;
+	public static Item waterRune;
 	
 	//Metal Bars
 	public static Bar adamantBar;
@@ -72,9 +53,9 @@ public class Items {
 	
 	
 	//Weapons
-	public static Weapon skeletalAirStaff;
-	public static Weapon runeDagger;
-	public static Weapon runeBattleAxe;
+	public static Item skeletalAirStaff;
+	public static Item runeDagger;
+	public static Item runeBattleAxe;
 	
 	
 	//Food
@@ -134,26 +115,26 @@ public class Items {
 	public static void init() {
 		//Runes
 		airrune = new RuneItem().setUnlocalizedName("airrune");
-		mindRune = new MindRune();
-		waterRune = new WaterRune();
-		earthRune = new EarthRune();
-		fireRune = new FireRune();
-		bodyRune = new BodyRune();
-		cosmicRune = new CosmicRune();
-		chaosRune = new ChaosRune();
-		natureRune = new NatureRune();
-		lawRune = new LawRune();
-		deathRune = new DeathRune();
-		astralRune = new AstralRune();
-		bloodRune = new BloodRune();
-		soulRune = new SoulRune();
-		armadylrune = new ArmadylRune();
-		dustRune = new DustRune();
-		lavaRune = new LavaRune();
-		mistRune = new MistRune();
-		mudRune = new MudRune();
-		smokeRune = new SmokeRune();
-		steamRune = new SteamRune();
+		mindRune = new RuneItem().setUnlocalizedName("mindrune");
+		waterRune = new RuneItem().setUnlocalizedName("waterrune");
+		earthRune = new RuneItem().setUnlocalizedName("earthrune");
+		fireRune = new RuneItem().setUnlocalizedName("firerune");
+		bodyRune = new RuneItem().setUnlocalizedName("bodyrune");
+		cosmicRune = new RuneItem().setUnlocalizedName("cosmicrune");
+		chaosRune = new RuneItem().setUnlocalizedName("chaosrune");
+		natureRune = new RuneItem().setUnlocalizedName("naturerune");
+		lawRune = new RuneItem().setUnlocalizedName("lawrune");
+		deathRune = new RuneItem().setUnlocalizedName("deathrune");
+		astralRune = new RuneItem().setUnlocalizedName("astralrune");
+		bloodRune = new RuneItem().setUnlocalizedName("bloodrune");
+		soulRune = new RuneItem().setUnlocalizedName("soulrune");
+		armadylrune = new RuneItem().setUnlocalizedName("armadylrune");
+		dustRune = new RuneItem().setUnlocalizedName("dustrune");
+		lavaRune = new RuneItem().setUnlocalizedName("lavarune");
+		mistRune = new RuneItem().setUnlocalizedName("mistrune");
+		mudRune = new RuneItem().setUnlocalizedName("mudrune");
+		smokeRune = new RuneItem().setUnlocalizedName("smokerune");
+		steamRune = new RuneItem().setUnlocalizedName("steamrune");
 		
 		
 		//Metal Bars
@@ -161,8 +142,8 @@ public class Items {
 		
 		//Weapons
 		skeletalAirStaff = new SkeletalAirStaff();
-		runeDagger = new RuneDagger();
-		runeBattleAxe = new RuneBattleAxe();
+		runeDagger = new Dagger().setUnlocalizedName("runedagger");
+		runeBattleAxe = new BattleAxe().setUnlocalizedName("runebattleaxe");
 		
 		
 		
