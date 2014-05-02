@@ -23,7 +23,7 @@ public class Runecraft
     public static CreativeTabs tabRunecraftMagic = new CreativeTabs("tabRunecraftMagic"){
 			@Override
 			public Item getTabIconItem() {
-				return Items.airRune;
+				return Items.airrune;
 			}
     };
     

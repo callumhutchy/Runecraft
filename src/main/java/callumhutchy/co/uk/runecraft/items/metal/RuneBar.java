@@ -6,7 +6,7 @@ public class RuneBar extends Bar{
 	
 	public RuneBar(){
 		this.setUnlocalizedName("runeBar");
-		this.setTextureName("runecraft:bars/runeBar");
+		
 		
 		
 	}

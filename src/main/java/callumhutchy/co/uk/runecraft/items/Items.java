@@ -6,7 +6,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import callumhutchy.co.uk.runecraft.items.metal.Bar;
 import callumhutchy.co.uk.runecraft.items.metal.RuneBar;
-import callumhutchy.co.uk.runecraft.items.runes.AirRune;
 import callumhutchy.co.uk.runecraft.items.runes.ArmadylRune;
 import callumhutchy.co.uk.runecraft.items.runes.AstralRune;
 import callumhutchy.co.uk.runecraft.items.runes.BloodRune;
@@ -28,6 +27,7 @@ import callumhutchy.co.uk.runecraft.items.runes.SmokeRune;
 import callumhutchy.co.uk.runecraft.items.runes.SoulRune;
 import callumhutchy.co.uk.runecraft.items.runes.SteamRune;
 import callumhutchy.co.uk.runecraft.items.runes.WaterRune;
+import callumhutchy.co.uk.runecraft.items.weapons.Weapon;
 import callumhutchy.co.uk.runecraft.items.weapons.rune.RuneBattleAxe;
 import callumhutchy.co.uk.runecraft.items.weapons.rune.RuneDagger;
 import callumhutchy.co.uk.runecraft.items.weapons.staves.SkeletalAirStaff;
@@ -35,8 +35,8 @@ import callumhutchy.co.uk.runecraft.items.weapons.staves.SkeletalAirStaff;
 public class Items {
 
 	//Runes
-	public static RuneItem airRune;
-	public static RuneItem armadylRune;
+	public static Item airrune;
+	public static RuneItem armadylrune;
 	public static RuneItem astralRune;
 	public static RuneItem bloodRune;
 	public static RuneItem bodyRune;
@@ -72,9 +72,9 @@ public class Items {
 	
 	
 	//Weapons
-	public static Item skeletalAirStaff;
-	public static Item runeDagger;
-	public static Item runeBattleAxe;
+	public static Weapon skeletalAirStaff;
+	public static Weapon runeDagger;
+	public static Weapon runeBattleAxe;
 	
 	
 	//Food
@@ -133,7 +133,7 @@ public class Items {
 	
 	public static void init() {
 		//Runes
-		airRune = new AirRune();
+		airrune = new RuneItem().setUnlocalizedName("airrune");
 		mindRune = new MindRune();
 		waterRune = new WaterRune();
 		earthRune = new EarthRune();
@@ -147,7 +147,7 @@ public class Items {
 		astralRune = new AstralRune();
 		bloodRune = new BloodRune();
 		soulRune = new SoulRune();
-		armadylRune = new ArmadylRune();
+		armadylrune = new ArmadylRune();
 		dustRune = new DustRune();
 		lavaRune = new LavaRune();
 		mistRune = new MistRune();
@@ -174,7 +174,7 @@ public class Items {
 	public static void addNames(){
 		
 		//Runes
-		LanguageRegistry.addName(airRune, "Air Rune");
+		LanguageRegistry.addName(airrune, "Air Rune");
 		LanguageRegistry.addName(mindRune, "Mind Rune");
 		LanguageRegistry.addName(waterRune, "Water Rune");
 		LanguageRegistry.addName(earthRune, "Earth Rune");
@@ -188,7 +188,7 @@ public class Items {
 		LanguageRegistry.addName(astralRune, "Astral Rune");
 		LanguageRegistry.addName(bloodRune, "Blood Rune");
 		LanguageRegistry.addName(soulRune, "Soul Rune");
-		LanguageRegistry.addName(armadylRune, "Armadyl Rune");
+		LanguageRegistry.addName(armadylrune, "Armadyl Rune");
 		LanguageRegistry.addName(dustRune, "Dust Rune");
 		LanguageRegistry.addName(lavaRune, "Lava Rune");
 		LanguageRegistry.addName(mistRune, "Mist Rune");
@@ -209,7 +209,7 @@ public class Items {
 	
 	public static void addItemsToGame(){
 		//Rune
-		GameRegistry.registerItem(airRune, airRune.getUnlocalizedName());
+		GameRegistry.registerItem(airrune, airrune.getUnlocalizedName());
 		GameRegistry.registerItem(mindRune, mindRune.getUnlocalizedName());
 		GameRegistry.registerItem(waterRune, waterRune.getUnlocalizedName());
 		GameRegistry.registerItem(earthRune, earthRune.getUnlocalizedName());
@@ -223,7 +223,7 @@ public class Items {
 		GameRegistry.registerItem(astralRune, astralRune.getUnlocalizedName());
 		GameRegistry.registerItem(bloodRune, bloodRune.getUnlocalizedName());
 		GameRegistry.registerItem(soulRune, soulRune.getUnlocalizedName());
-		GameRegistry.registerItem(armadylRune, armadylRune.getUnlocalizedName());
+		GameRegistry.registerItem(armadylrune, armadylrune.getUnlocalizedName());
 		GameRegistry.registerItem(dustRune, dustRune.getUnlocalizedName());
 		GameRegistry.registerItem(lavaRune, lavaRune.getUnlocalizedName());
 		GameRegistry.registerItem(mistRune, mistRune.getUnlocalizedName());

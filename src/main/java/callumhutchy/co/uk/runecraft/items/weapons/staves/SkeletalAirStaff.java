@@ -5,6 +5,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import callumhutchy.co.uk.runecraft.Runecraft;
 import callumhutchy.co.uk.runecraft.entity.EntityAirBlast;
 import callumhutchy.co.uk.runecraft.items.Items;
+import callumhutchy.co.uk.runecraft.items.weapons.Weapon;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityFireball;
 import net.minecraft.entity.projectile.EntityLargeFireball;
@@ -13,20 +14,20 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class SkeletalAirStaff extends Item {
+public class SkeletalAirStaff extends Weapon {
 	private double accelerationX = 1;
 	private double accelerationY = 1;
 	private double accelerationZ = 1;
 	public SkeletalAirStaff(){
 		this.setCreativeTab(Runecraft.tabRunecraftMagic);
-		this.setMaxStackSize(1);
-		this.setTextureName("runecraft:weapons/skeletalAirStaff");
+		
+		
 		this.setUnlocalizedName("skeletalAirStaff");
 	}
 	
 	@Override
 	 public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,EntityPlayer par3EntityPlayer) {
-	   if(par3EntityPlayer.capabilities.isCreativeMode||par3EntityPlayer.inventory.consumeInventoryItem(Items.airRune))
+	   if(par3EntityPlayer.capabilities.isCreativeMode||par3EntityPlayer.inventory.consumeInventoryItem(Items.airrune))
 	   {
 	     par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 	     if (!par2World.isRemote)
@@ -38,9 +39,5 @@ public class SkeletalAirStaff extends Item {
 	   return par1ItemStack;
 	   }
 	
-	@SideOnly(Side.CLIENT)
-    public boolean isFull3D()
-    {
-        return true;
-    }
+	
 }
