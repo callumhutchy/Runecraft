@@ -4,6 +4,6 @@ import net.minecraft.item.Item;
 
 public class AirBlast extends Item {
 public AirBlast(){
-	this.setTextureName("runecraft:spells/airBlast");
+	this.setTextureName("runecraft:airBlast");
 }
 }

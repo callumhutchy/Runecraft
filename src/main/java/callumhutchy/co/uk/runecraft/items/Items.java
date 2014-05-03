@@ -148,7 +148,7 @@ public class Items {
 		
 		
 		//Misc
-		airBlast = new AirBlast();
+		airBlast = new AirBlast().setUnlocalizedName("airblast");;
 	}
 
 	@SuppressWarnings("deprecation")
@@ -186,6 +186,8 @@ public class Items {
 		LanguageRegistry.addName(skeletalAirStaff, "Skeletal Air Staff");
 		LanguageRegistry.addName(runeDagger, "Rune Dagger");
 		LanguageRegistry.addName(runeBattleAxe, "Rune BattleAxe");
+		
+		LanguageRegistry.addName(airBlast, "Air Blast");
 	}
 	
 	public static void addItemsToGame(){
@@ -222,6 +224,8 @@ public class Items {
 		GameRegistry.registerItem(runeDagger, runeDagger.getUnlocalizedName());
 		GameRegistry.registerItem(runeBattleAxe, runeBattleAxe.getUnlocalizedName());
 	
+		
+		GameRegistry.registerItem(airBlast, airBlast.getUnlocalizedName());
 	}
 	
 	public static void addCraftingRecipes(){

@@ -3,6 +3,8 @@ package callumhutchy.co.uk.runecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import callumhutchy.co.uk.runecraft.entity.EntityAirBlast;
+import callumhutchy.co.uk.runecraft.items.AirBlast;
 import callumhutchy.co.uk.runecraft.items.Items;
 import callumhutchy.co.uk.runecraft.lib.IDs;
 import callumhutchy.co.uk.runecraft.lib.Names;
@@ -12,6 +14,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = Runecraft.MODID, version = Runecraft.VERSION)
@@ -50,17 +53,22 @@ public class Runecraft
     public void preInit(FMLPreInitializationEvent event){
     	Names.init();
     	IDs.init();
+    	Items.init();
+    	Items.addNames();
+    	Items.addItemsToGame();
+    	Items.addCraftingRecipes();
     	
+    	int modEntityID = 0;
+    	EntityRegistry.registerModEntity(EntityAirBlast.class, "Air Blast", ++modEntityID, this, 64, 10, true);
+    
+    	proxy.registerRenderers();    
+    
     }
     
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
     	
-    	Items.init();
-    	Items.addNames();
-    	Items.addItemsToGame();
-    	Items.addCraftingRecipes();
     	
     	
     	LanguageRegistry.instance().addStringLocalization("itemGroup.tabRunecraftMagic","en_US","Runecraft Magic");
