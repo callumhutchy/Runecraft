@@ -7,6 +7,7 @@ import callumhutchy.co.uk.runecraft.entity.EntityAirBlast;
 import callumhutchy.co.uk.runecraft.items.Items;
 import callumhutchy.co.uk.runecraft.items.weapons.Weapon;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityFireball;
@@ -16,14 +17,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class SkeletalAirStaff extends Weapon {
+public class SkeletalAirStaff extends Staff {
 	private double accelerationX = 1;
 	private double accelerationY = 0;
 	private double accelerationZ = 0;
 	public SkeletalAirStaff(){
 		this.setCreativeTab(Runecraft.tabRunecraftMagic);
 		
-		
+	Entity par4Entity;
 		this.setUnlocalizedName("skeletalAirStaff");
 	}
 	
@@ -34,7 +35,7 @@ public class SkeletalAirStaff extends Weapon {
 	     par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 	     if (!par2World.isRemote)
 	     {
-	    	 	
+	    		
 	    
 	       par2World.spawnEntityInWorld(new EntityAirBlast(par2World, par3EntityPlayer));
 	     }
