@@ -107,6 +107,8 @@ public class Items {
 	public static Item cooked_caveFish;
 	public static Item cooked_rocktails;
 	
+	//Ore Items
+	public static Item oreCopper;
 	
 	
 	
@@ -145,6 +147,8 @@ public class Items {
 		runeDagger = new Dagger().setUnlocalizedName("runedagger");
 		runeBattleAxe = new BattleAxe().setUnlocalizedName("runebattleaxe");
 		
+		//Ore Items
+		oreCopper = new OreItem().setUnlocalizedName("oreCopper");
 		
 		
 		//Misc
@@ -187,6 +191,9 @@ public class Items {
 		LanguageRegistry.addName(runeDagger, "Rune Dagger");
 		LanguageRegistry.addName(runeBattleAxe, "Rune BattleAxe");
 		
+		//Ore Item
+		LanguageRegistry.addName(oreCopper, "Copper Ore");
+		
 		LanguageRegistry.addName(airBlast, "Air Blast");
 	}
 	
@@ -224,6 +231,8 @@ public class Items {
 		GameRegistry.registerItem(runeDagger, runeDagger.getUnlocalizedName());
 		GameRegistry.registerItem(runeBattleAxe, runeBattleAxe.getUnlocalizedName());
 	
+		//Ore Item
+		GameRegistry.registerItem(oreCopper, oreCopper.getUnlocalizedName());
 		
 		GameRegistry.registerItem(airBlast, airBlast.getUnlocalizedName());
 	}

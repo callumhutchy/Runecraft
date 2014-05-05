@@ -3,7 +3,10 @@ package callumhutchy.co.uk.runecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import callumhutchy.co.uk.runecraft.blocks.Blocks;
 import callumhutchy.co.uk.runecraft.entity.EntityAirBlast;
+import callumhutchy.co.uk.runecraft.entity.EntityCopperOre;
+import callumhutchy.co.uk.runecraft.entity.EntityRCFurnace;
 import callumhutchy.co.uk.runecraft.items.AirBlast;
 import callumhutchy.co.uk.runecraft.items.Items;
 import callumhutchy.co.uk.runecraft.lib.IDs;
@@ -15,6 +18,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = Runecraft.MODID, version = Runecraft.VERSION)
@@ -57,10 +61,13 @@ public class Runecraft
     	Items.addNames();
     	Items.addItemsToGame();
     	Items.addCraftingRecipes();
+    	Blocks.init();
     	
     	int modEntityID = 0;
     	EntityRegistry.registerModEntity(EntityAirBlast.class, "Air Blast", ++modEntityID, this, 64, 10, true);
-    
+    	
+    	GameRegistry.registerTileEntity(EntityRCFurnace.class, "RC Furnace");
+    	GameRegistry.registerTileEntity(EntityCopperOre.class, "Copper Ore");
     	proxy.registerRenderers();    
     
     }
