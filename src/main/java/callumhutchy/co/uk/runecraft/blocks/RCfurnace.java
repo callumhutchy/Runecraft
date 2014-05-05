@@ -43,6 +43,8 @@ public class RCfurnace extends BlockContainer {
 		return this.blockID;
 
 	}
+	
+	
 	public boolean shouldSideBeRendered(IBlockAccess iblockaccess, int i, int j, int k, int l)
 	{
 	   return false;
@@ -63,7 +65,6 @@ public class RCfurnace extends BlockContainer {
     {
         int l = determineOrientation(p_149689_1_, p_149689_2_, p_149689_3_, p_149689_4_, p_149689_5_);
         p_149689_1_.setBlockMetadataWithNotify(p_149689_2_, p_149689_3_, p_149689_4_, l, 2);
-
         
     }
 
@@ -91,12 +92,9 @@ public class RCfurnace extends BlockContainer {
 	    }
 
 	 @SubscribeEvent
-	//Called when a player right-clicks with this item in his hand
+	
 	    public boolean onItemUse(ItemStack item, EntityPlayer player, World world, int x, int y, int z, int side, float xOffset, float yOffset, float zOffSet){
 	        //Prevents itemstack from decreasing when in creative mod
-	        if (!player.capabilities.isCreativeMode){
-	            --item.stackSize;
-	        }
 	        //Prevents from making changes in inactive world
 	        if (!world.isRemote){
 	                //Increases y coordinate, so our block will be placed on top of the block you clicked, just as it should be
