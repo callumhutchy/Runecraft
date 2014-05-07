@@ -34,7 +34,7 @@ public class EntityAirBlast extends EntityThrowable {
     {
         if (par1MovingObjectPosition.entityHit != null)
         {
-            byte b0 = 3;
+            byte b0 = 8;
 
 
             par1MovingObjectPosition.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)b0);

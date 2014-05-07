@@ -37,6 +37,7 @@ public class RenderRCFurnace extends TileEntitySpecialRenderer {
 		if (metadata%4 == 0)
     	         {
     	                         rotationAngle = 0;
+    	                       
     	         }
 
     	         if (metadata%4 == 1)

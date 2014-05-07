@@ -25,7 +25,8 @@ public class RCfurnace extends BlockContainer {
 	public RCfurnace(Material p_i45394_1_) {
 		super(p_i45394_1_);
 		this.setCreativeTab(Runecraft.tabRunecraftMetal);
-        this.setBlockBounds(1F, 0F, -1F, -1F, 1.75F, 2F);
+		this.setBlockBounds(1F, 0F, -1F, -1F, 1.75F, 2F);
+		
         this.setBlockTextureName("runecraft:RunecraftFurnaceTextureMap");
         this.setHardness(5F);
         this.setHarvestLevel("pickaxe", 1);
@@ -61,10 +62,13 @@ public class RCfurnace extends BlockContainer {
 		 return new EntityRCFurnace();
 	}
 	
-	public void onBlockPlacedBy(World p_149689_1_, int p_149689_2_, int p_149689_3_, int p_149689_4_, EntityLivingBase p_149689_5_, ItemStack p_149689_6_)
+	public void onBlockPlacedBy(World world, int parX, int parY, int parZ, EntityLivingBase player, ItemStack p_149689_6_)
     {
-        int l = determineOrientation(p_149689_1_, p_149689_2_, p_149689_3_, p_149689_4_, p_149689_5_);
-        p_149689_1_.setBlockMetadataWithNotify(p_149689_2_, p_149689_3_, p_149689_4_, l, 2);
+        int l = determineOrientation(world, parX, parY, parZ, player);
+        int dir = MathHelper.floor_double((double)((player.rotationYaw * 4F) / 360F) + 0.5D) & 3;
+        world.setBlockMetadataWithNotify(parX, parY, parZ, l, 2);
+        
+       // world.setBlock(parX++, parY, parZ, Blocks.blockGag, dir, 0x02);
         
     }
 
@@ -78,6 +82,7 @@ public class RCfurnace extends BlockContainer {
 
 	            if (d0 - (double)p_150071_2_ > 2.0D)
 	            {
+	            	
 	                return 1;
 	            }
 
@@ -91,8 +96,7 @@ public class RCfurnace extends BlockContainer {
 	        return l == 0 ? 2 : (l == 1 ? 5 : (l == 2 ? 3 : (l == 3 ? 4 : 0)));
 	    }
 
-	 @SubscribeEvent
-	
+	 	@SubscribeEvent
 	    public boolean onItemUse(ItemStack item, EntityPlayer player, World world, int x, int y, int z, int side, float xOffset, float yOffset, float zOffSet){
 	        //Prevents itemstack from decreasing when in creative mod
 	        //Prevents from making changes in inactive world

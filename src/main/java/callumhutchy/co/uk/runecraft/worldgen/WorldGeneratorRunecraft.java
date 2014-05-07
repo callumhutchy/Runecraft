@@ -35,6 +35,10 @@ public class WorldGeneratorRunecraft implements IWorldGenerator{
 		  int Ycoord1 = random.nextInt(90);
 		  int Zcoord1 = blockZ + random.nextInt(16);
 	  (new WorldGenTestAltar()).generate(world, random, Xcoord1, Ycoord1, Zcoord1);
+	  	int Xcoord2 = blockX + random.nextInt(16);
+	  	int Ycoord2 = random.nextInt(90);
+	  	int Zcoord2 = blockZ + random.nextInt(16);
+	  	(new WorldGenAirAltar()).generate(world, random, Xcoord2, Ycoord2, Zcoord2);
 	  }
 	 
 	 
