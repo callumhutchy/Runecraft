@@ -25,7 +25,7 @@ public class RCfurnace extends BlockContainer {
 	public RCfurnace(Material p_i45394_1_) {
 		super(p_i45394_1_);
 		this.setCreativeTab(Runecraft.tabRunecraftMetal);
-		this.setBlockBounds(1F, 0F, -1F, -1F, 1.75F, 2F);
+		//this.setBlockBounds(1F, 0F, -1F, -1F, 1.75F, 2F);
 		
         this.setBlockTextureName("runecraft:RunecraftFurnaceTextureMap");
         this.setHardness(5F);
@@ -64,15 +64,67 @@ public class RCfurnace extends BlockContainer {
 	
 	public void onBlockPlacedBy(World world, int parX, int parY, int parZ, EntityLivingBase player, ItemStack p_149689_6_)
     {
-        int l = determineOrientation(world, parX, parY, parZ, player);
-        int dir = MathHelper.floor_double((double)((player.rotationYaw * 4F) / 360F) + 0.5D) & 3;
-        world.setBlockMetadataWithNotify(parX, parY, parZ, l, 2);
+		
+		
+		
+//        int l = determineOrientation(world, parX, parY, parZ, player);
+//        int dir = MathHelper.floor_double((double)((player.rotationYaw * 4F) / 360F) + 0.5D) & 3;
+//        world.setBlockMetadataWithNotify(parX, parY, parZ, l, 2);
+//        int parX1 = parX + 1;
         
-       // world.setBlock(parX++, parY, parZ, Blocks.blockGag, dir, 0x02);
         
+//        int metadata = te.getBlockMetadata();
+
+    	
+        
+//        if (metadata%4 == 0)
+//        {
+//                        
+//                        world.setBlock(parX1, parY, parZ, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1, parY, parZ--, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1--, parY, parZ, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1--, parY, parZ, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1, parY, parZ++, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1, parY++, parZ, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1, parY, parZ--, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1++, parY, parZ, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1++, parY, parZ, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1, parY, parZ++, Blocks.blockGag, dir, 0x02);
+//                        world.setBlock(parX1--, parY, parZ, Blocks.blockGag, dir, 0x02);
+//        }
+//
+//        if (metadata%4 == 1)
+//        {
+//                      
+//        }
+//
+//        if (metadata%4 == 2)
+//        {
+//                      
+//        }
+//
+//        if (metadata%4 == 3)
+//        {
+//                        
+//        }
+       
     }
 
+	public void setBlockBoundsBasedOnState(IBlockAccess p_149719_1_, int p_149719_2_, int p_149719_3_, int p_149719_4_)
+    {
+        int l = p_149719_1_.getBlockMetadata(p_149719_2_, p_149719_3_, p_149719_4_) & 3;
 
+        if (l != 3 && l != 1)
+        {
+//            this.setBlockBounds(0.125F, 0.0F, 0.0F, 0.875F, 1.0F, 1.0F);
+        	this.setBlockBounds(1F, 0F, -1F, -1F, 1.75F, 2F);
+        }
+        else
+        {
+//            this.setBlockBounds(0.0F, 0.0F, 0.125F, 1.0F, 1.0F, 0.875F);
+        	this.setBlockBounds(-1F, 0F, 1F, 2F, 1.75F, -1F);
+        }
+    }
 
 	 public static int determineOrientation(World p_150071_0_, int p_150071_1_, int p_150071_2_, int p_150071_3_, EntityLivingBase p_150071_4_)
 	    {

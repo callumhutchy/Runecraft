@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
+import callumhutchy.co.uk.runecraft.blocks.Blocks;
 import callumhutchy.co.uk.runecraft.entity.EntityRCFurnace;
 import callumhutchy.co.uk.runecraft.models.oreModel;
 import callumhutchy.co.uk.runecraft.models.rcfurnaceModel;
@@ -32,12 +33,26 @@ public class RenderRCFurnace extends TileEntitySpecialRenderer {
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float scale) {
     
     	int metadata = te.getBlockMetadata();
-
+    	World world = null;
     	float rotationAngle = 0;
+    	int parX1 = (int)x + 1;
+        int parY1 = (int)y;
+        int parZ1 = (int)z;
+        
 		if (metadata%4 == 0)
     	         {
     	                         rotationAngle = 0;
-    	                       
+    	                        world.setBlock(parX1, parY1, parZ1, Blocks.blockGag);
+    	                        world.setBlock(parX1, parY1, parZ1--, Blocks.blockGag);
+    	                        world.setBlock(parX1--, parY1, parZ1, Blocks.blockGag);
+    	                        world.setBlock(parX1--, parY1, parZ1, Blocks.blockGag);
+    	                        world.setBlock(parX1, parY1, parZ1++, Blocks.blockGag);
+    	                        world.setBlock(parX1, parY1++, parZ1, Blocks.blockGag);
+    	                        world.setBlock(parX1, parY1, parZ1--, Blocks.blockGag);
+    	                        world.setBlock(parX1++, parY1, parZ1, Blocks.blockGag);
+    	                        world.setBlock(parX1++, parY1, parZ1, Blocks.blockGag);
+    	                        world.setBlock(parX1, parY1, parZ1++, Blocks.blockGag);
+    	                        world.setBlock(parX1--, parY1, parZ1, Blocks.blockGag);
     	         }
 
     	         if (metadata%4 == 1)
@@ -59,7 +74,7 @@ public class RenderRCFurnace extends TileEntitySpecialRenderer {
     	//The PushMatrix tells the renderer to "start" doing something.
             GL11.glPushMatrix();
     //This is setting the initial location.
-            GL11.glTranslatef((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
+            GL11.glTranslatef((float) x + 0.5F, (float) parY1 + 1.5F, (float) parZ1 + 0.5F);
     //This is the texture of your block. It's pathed to be the same place as your other blocks here.
             //Outdated bindTextureByName("/mods/roads/textures/blocks/TrafficLightPoleRed.png");
    //Use in 1.6.2  this

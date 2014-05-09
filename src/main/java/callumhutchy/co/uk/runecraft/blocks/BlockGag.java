@@ -61,4 +61,9 @@ public class BlockGag extends BlockContainer{
 		// TODO Auto-generated method stub
 		return new TileEntityGag();
 	}
+	@Override
+	public int getRenderType() {
+	        return -1;
+	}
+	
 }
